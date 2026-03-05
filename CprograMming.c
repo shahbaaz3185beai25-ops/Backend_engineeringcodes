@@ -688,7 +688,44 @@ int main() {
     }
     printf("\n");
     // Sample Input: 2, Elements: 10 20 | Output: 0 0
-    */
+    #include <stdio.h>
+
+int main() {
+    {
+        int size, i, j;
+        // Using char pointer for strings
+        char* check = "Identity"; 
+        scanf("%d", &size);
+        int matrix[size][size];
+
+        for (i = 0; i < size; i = i + 1) {
+            for (j = 0; j < size; j = j + 1) {
+                scanf("%d", &matrix[i][j]);
+                // Main diagonal must be 1
+                if (i == j && matrix[i][j] != 1) {
+                    check = "Not an Identity";
+                }
+                // All other elements must be 0
+                if (i != j && matrix[i][j] != 0) {
+                    check = "Not an Identity";
+                }
+            }
+        }
+        // Using %s to print a string
+        printf("%s\n", check);
+    }
+    return 0;
+}
+
+/* Sample Input:
+3
+1 0 0
+0 1 0
+0 0 1
+
+Sample Output:
+Identity
+*/
 
     return 0;
 }
