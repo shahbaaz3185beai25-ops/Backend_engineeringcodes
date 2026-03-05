@@ -725,6 +725,39 @@ int main() {
 
 Sample Output:
 Identity
+#include <stdio.h>
+
+int main() {
+    int r3 = 2, c3 = 3;
+    int i3, j3, row_sum;
+    int mat3[2][3] = {
+        {10, 20, 30},
+        {40, 50, 60}
+    };
+
+    // Outer loop to iterate through each row
+    for (i3 = 0; i3 < r3; i3 = i3 + 1) {
+        // row_sum is reset to 0 at the start of every row
+        row_sum = 0; 
+        
+        // Inner loop to iterate through columns of the current row
+        for (j3 = 0; j3 < c3; j3 = j3 + 1) {
+            row_sum = row_sum + mat3[i3][j3];
+        }
+        
+        // Output the sum of the current row before moving to the next
+        printf("Row %d: %d\n", i3, row_sum);
+    }
+
+    return 0;
+}
+
+/* Sample Input:
+Matrix: {{10, 20, 30}, {40, 50, 60}}
+
+Sample Output:
+Row 0: 60
+Row 1: 150
 */
 
     return 0;
